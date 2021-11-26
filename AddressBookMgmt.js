@@ -11,7 +11,7 @@ while (flag) {
     console.log("2. display the list of Contact");
     console.log("3. to exit");
     let option = parseInt(prompt("Enter your choice : "));
- 
+
     switch (option) {
         case 1:
             contactList = addressBook.insert(contactList);
@@ -20,6 +20,9 @@ while (flag) {
             console.log(contactList);
             break;
         case 3:
+            contactList = addressBook.editContact(contactList);
+            break;
+        case 4:
             flag = false;
             break;
         default:

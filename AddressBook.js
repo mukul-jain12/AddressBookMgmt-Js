@@ -23,6 +23,40 @@ class AddressBook {
             console.error(e);
         }
     }
+
+    editContact(contactList) {
+        let fName = prompt("Enter the First Name of the Contact : ");
+        contactList.forEach(contact => {
+            if ((contact.firstName === fName) == true) {
+                let personInfo = new PersonInformation();
+
+                personInfo.lastName = prompt("Enter Last Name : ");
+                contact.lastName = personInfo.lastName;
+                
+                personInfo.address = prompt("Enter Address : ");
+                contact.address = personInfo.address;
+                
+                personInfo.city = prompt("Enter City : ");
+                contact.city = personInfo.city;
+                
+                personInfo.state = prompt("Enter State : ");
+                contact.state = personInfo.state;
+                
+                personInfo.zip = prompt("Enter Zip : ");
+                contact.zip = personInfo.zip;
+                
+                personInfo.phoneNumber = prompt("Enter Phone Number : ");
+                contact.phoneNumber = personInfo.phoneNumber;
+                
+                personInfo.email = prompt("Enter Email : ");
+                contact.email = personInfo.email;
+            }
+            else{
+                console.log("No contact present with this name!")
+            }
+        });
+        return contactList;
+    }
 }
 
 module.exports = AddressBook;
