@@ -11,7 +11,8 @@ while (flag) {
     console.log("2. display the list of Contact");
     console.log("3. edit contacts in Address Book");
     console.log("4. delete contacts in Address Book");
-    console.log("5. to exit");
+    console.log("5. count number of contacts in Address Book");
+    console.log("6. to exit");
     let option = parseInt(prompt("Enter your choice : "));
 
     switch (option) {
@@ -28,6 +29,9 @@ while (flag) {
             contactList = addressBook.deleteContact(contactList);
             break;
         case 5:
+            console.log("Number of contacts in the address book is : " + contactList.length);
+            break;
+        case 6:
             flag = false;
             break;
         default:
