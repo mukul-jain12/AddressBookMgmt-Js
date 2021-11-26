@@ -12,7 +12,9 @@ while (flag) {
     console.log("3. edit contacts in Address Book");
     console.log("4. delete contacts in Address Book");
     console.log("5. count number of contacts in Address Book");
-    console.log("6. to exit");
+    console.log("6. search contacts by city and state in Address Book");
+    console.log("7. count number of contacts by city and state in Address Book");
+    console.log("8. to exit");
     let option = parseInt(prompt("Enter your choice : "));
 
     switch (option) {
@@ -32,9 +34,12 @@ while (flag) {
             console.log("Number of contacts in the address book is : " + contactList.length);
             break;
         case 6:
-            contactList = addressBook.searchContact(contactList);
+            addressBook.searchContact(contactList);
             break;
         case 7:
+            addressBook.countContact(contactList);
+            break;
+        case 8:
             flag = false;
             break;
         default:

@@ -116,6 +116,34 @@ class AddressBook {
                 break;
         }
     }
+
+    countContact(contactList) {
+        console.log("1. count by City");
+        console.log("2. count by State");
+        let option = parseInt(prompt("Enter your choice : "));
+        let count = 0;
+        switch (option) {
+            case 1:
+                let city = prompt("Enter the City you want to count the person for : ");
+                contactList.forEach(contact => {
+                    if (contact.city == city) {
+                        count++;
+                    }
+                });
+                break;
+            case 2:
+                let state = prompt("Enter the State you want to count the person for : ");
+                contactList.forEach(contact => {
+                    if (contact.state == state) {
+                        count++;
+                    }
+                });
+                break;
+            default:
+                console.log("You have entered invalid input!");
+                break;
+        }
+    }
 }
 
 module.exports = AddressBook;
