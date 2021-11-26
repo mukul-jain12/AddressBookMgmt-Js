@@ -5,6 +5,7 @@ const prompt = require('prompt-sync')();
 class AddressBook {
     contactList = new Array();
     insert(contactList) {
+        let flag = false;
         let personInfo = new PersonInformation();
         try {
             personInfo.firstName = prompt("Enter First Name : ");
@@ -15,8 +16,23 @@ class AddressBook {
             personInfo.zip = prompt("Enter Zip : ");
             personInfo.phoneNumber = prompt("Enter Phone Number : ");
             personInfo.email = prompt("Enter Email : ");
-            contactList.push(personInfo);
 
+            if( contactList.length < 0 ) {
+                contactList.push(personInfo);
+            } else if ( contactList.length >= 0 ) {
+                contactList.forEach(element => {
+                    if( (element.firstName === personInfo.firstName ) == true ) {
+                        flag = true;
+                        return;
+                    }
+                });
+                if( flag == true ) {
+                    console.log();
+                    console.log("Duplicate entry exists!");
+                } else {
+                    contactList.push(personInfo);
+                }
+            }
             return contactList;
         }
         catch (e) {
