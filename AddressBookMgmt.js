@@ -32,6 +32,9 @@ while (flag) {
             console.log("Number of contacts in the address book is : " + contactList.length);
             break;
         case 6:
+            contactList = addressBook.searchContact(contactList);
+            break;
+        case 7:
             flag = false;
             break;
         default:
