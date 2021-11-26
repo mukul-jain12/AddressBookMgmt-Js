@@ -9,7 +9,9 @@ while (flag) {
 
     console.log("1. insert contacts in Address Book");
     console.log("2. display the list of Contact");
-    console.log("3. to exit");
+    console.log("3. edit contacts in Address Book");
+    console.log("4. delete contacts in Address Book");
+    console.log("5. to exit");
     let option = parseInt(prompt("Enter your choice : "));
 
     switch (option) {
@@ -23,6 +25,9 @@ while (flag) {
             contactList = addressBook.editContact(contactList);
             break;
         case 4:
+            contactList = addressBook.deleteContact(contactList);
+            break;
+        case 5:
             flag = false;
             break;
         default:

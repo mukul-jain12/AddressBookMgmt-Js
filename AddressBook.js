@@ -57,6 +57,21 @@ class AddressBook {
         });
         return contactList;
     }
+
+    deleteContact(contactList) {
+        let fName = prompt("Enter the First Name of the Contact : ");
+        contactList.forEach(contact => {
+            if( (contact.firstName === fName) == true ) {
+                let index = contactList.indexOf(fName);
+                contactList.splice(index, 1);
+                console.log("Contact is deleted");
+            }
+            else{
+                console.log("No contact present with this name!");
+            }
+        });
+        return contactList;
+    }
 }
 
 module.exports = AddressBook;
